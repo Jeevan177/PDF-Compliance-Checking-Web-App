@@ -1,31 +1,30 @@
 # 📄 PDF Compliance Checking Web App
 
-A full-stack web application for automated compliance verification from uploaded PDF and text files. Built with **FastAPI** for a fast and efficient backend and **Next.js + Tailwind CSS** for a responsive frontend, the app provides real-time results, smooth user experience, and modular code structure.
+A full-stack web application that enables users to upload PDF documents and rule files (text) to automatically perform compliance checking using LLMs and vector search. Built with FastAPI for the backend and Next.js for the frontend. The backend uses LangChain with a Groq-hosted LLM (`deepseek-r1-distill-llama-70b`) to semantically match uploaded compliance rules against the contents of a PDF.
 
 ---
 
 ## 🚀 Features
 
-### 🛠 Backend (FastAPI)
+### 🔧 Backend Features
+- FastAPI with async support
+- File upload handling for PDF and text files
+- Integrated compliance checking using LLM (LangChain + Groq)
+- PDF parsing using LangChain's PDFPlumberLoader
+- Vector-based semantic search using FAISS and HuggingFace embeddings
+- Proper error handling and logging
+- CORS configuration for frontend integration
+- Environment variable management via `.env`
 
-- ⚡ Asynchronous API using FastAPI
-- 📎 File upload support for PDF and text files
-- 🧠 Modular compliance logic via service architecture
-- ⚠️ Centralized error handling and logging
-- 🔐 Environment variable support using `.env`
-- 🔗 CORS support for frontend-backend communication
-
-### 🎨 Frontend (Next.js + Tailwind CSS)
-
-- 🧩 Modular React components
-- 🗂 Drag & drop file uploads via `react-dropzone`
-- ⏳ Loading indicators and real-time feedback
-- 💡 Clean UI with Tailwind CSS
-- 📱 Fully responsive and mobile-friendly design
-- ❗ Error handling with user-friendly feedback
+### 🎨 Frontend Features
+- Next.js with React components
+- Drag & drop file upload using `react-dropzone`
+- Real-time processing indicators
+- Responsive design with Tailwind CSS
+- Error handling and user feedback
+- Clean display of compliance results
 
 ---
-
 ## ⚙️ Getting Started
 
 ### Backend Setup (FastAPI)
@@ -53,7 +52,7 @@ pip install -r requirements.txt
 
 ```bash
 ALLOWED_ORIGINS=http://localhost:3000
-GROQ_API_KEY = 
+GROQ_API_KEY = your_groq_key_here
 
 ```
 
